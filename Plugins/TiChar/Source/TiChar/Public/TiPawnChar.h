@@ -47,6 +47,7 @@ protected:
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
 	void JumpAction(const FInputActionValue& Value);
+	void ApplyRotation(float DeltaTime);
 
 public:
 	// Called every frame
@@ -85,8 +86,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
 	float RotationInterpSpeed = 10.0f;
 
-	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
-	float MaxIdleCameraAngle = 90.0f;
+
 
 	FRotator TargetRotation; // Internal variable to store where we want to face
 	// === Enhanced Input setup ===
@@ -112,6 +112,31 @@ protected:
 	// ADD THIS:
 	UPROPERTY(Transient) // Transient means "don't save this to disk", just memory
 	FFloatSpringState RotationSpringState;
+
+	// --- ROTATION SETTINGS (Add these) ---
+
+	// Speed when moving (usually fast, e.g., 10.0f)
+	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
+	float WalkingRotationSpeed = 7.0f;
+
+	// Speed when stationary and turning (usually medium, e.g., 6.0f)
+	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
+	float TurnInPlaceSpeed = 4.5f;
+
+	// Default speed for small adjustments (slow, e.g., 4.0f)
+	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
+	float IdleRotationSpeed = 3.0f;
+
+	// Angle gap required to start a turn-in-place (e.g., 90.0 degrees)
+	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
+	float MaxIdleCameraAngle = 90.0f;
+
+	// Angle gap where we STOP turning (e.g., 5.0 degrees)
+	UPROPERTY(EditAnywhere, Category = "Ti|Movement")
+	float TurnStopTolerance = 2.0f;
+
+	// Internal tracking state
+	bool bIsTurningInPlace = false;
 
 
 

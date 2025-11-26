@@ -83,3 +83,4 @@ Plugins/*
 DerivedDataCache/*
 Content
 Config
+enc_temp_folder/*
