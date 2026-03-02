@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Stylize Render",
+	"Description": "C++ stylized rendering workflow helpers and automated level capture utilities.",
+	"Category": "Rendering",
+	"CreatedBy": "KIDs Team",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "StylizeRender",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "StylizeRenderEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

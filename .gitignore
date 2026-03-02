@@ -75,6 +75,8 @@ Plugins/*
 !Plugins/TiChar/Source
 !Plugins/TiRigLibs
 !Plugins/TiRigLibs/Source
+!Plugins/StylizeRender
+!Plugins/StylizeRender/Source
 
 
 !Plugins/**/*.uplugin
